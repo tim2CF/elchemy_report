@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Elchemy Report</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="img/favicon.ico"/>
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+    <textarea id="source">
+
+name: problem
+
+.left-column[
+### BEAM langs
+]
+
+.right-column[
+
+- erlang (1985) strong / dynamic types
+
+- elixir (2011) strong / dynamic types
+
+- [other 20+](https://github.com/llaisdy/beam_languages) dead or alive **dynamic** typed languages
+
+]
+
+---
+
+template: problem
+
+.right-column.center[
+  ##### Dynamic typing is ...
+]
+
+---
+
+template: problem
+
+.right-column.center[
+  ##### Dynamic typing is pain
+  <img src="img/dynamic-typing-meme.jpeg" width="88%">
+]
+
+---
+
+.left-column[
+### BEAM langs
+### Elchemy
+]
+
+.right-column[
+
+.center[
+  ### [Elchemy](https://wende.github.io/elchemy/)
+]
+
+- founded by [Christopher Wende](https://github.com/wende)
+
+- since 2017
+
+- subset of elm (haskell)
+
+- Hindley–Milner type system (type inference etc)
+
+- generates readable elixir source code
+
+.center[
+  <img src="img/elm-logo.png" width="50%">
+]
+
+]
+
+---
+
+.left-column[
+### BEAM langs
+### Elchemy
+### Experiment
+]
+
+.right-column[
+
+.center[
+  ### [Concept](https://github.com/tim2CF/elchemy_poker) of poker game engine
+  #### reasons
+]
+
+- Elm (Haskell) is good to build pure business logic
+
+- Elchemy officialy not support side-effects
+
+- Cannot use enterprise OTP / Phoenix / Ecto stuff
+
+]
+
+---
+
+.left-column[
+### BEAM langs
+### Elchemy
+### Experiment
+### Advantages
+]
+
+.right-column[
+
+- It [easy](https://github.com/wende/elchemy/blob/4112523266c245a10a7aad987753241eb97074a5/README.md#troubleshooting) to use Elchemy inside existing Elixir codebase
+
+- Natural representation of types / business models
+  - [example 1](https://github.com/tim2CF/elchemy_poker/blob/6f975bfd0b6c3ca20a507ade19a83a9027ad7817/elm/elchemyPoker/models/Card.elm#L4-L7)
+  - [example 2](https://github.com/tim2CF/elchemy_poker/blob/6f975bfd0b6c3ca20a507ade19a83a9027ad7817/elm/elchemyPoker/models/Combo.elm#L5-L16)
+
+- **STRONG STATIC types**
+
+- 100% safe runtime inside Elchemy - generated code
+
+- It's not possible to throw [exception](https://github.com/tim2CF/elchemy_poker/blob/6f975bfd0b6c3ca20a507ade19a83a9027ad7817/elm/elchemyPoker/models/Combo.elm#L28-L29)
+
+- No any implicit [stuff](https://github.com/tim2CF/elchemy_poker/blob/6f975bfd0b6c3ca20a507ade19a83a9027ad7817/elm/elchemyPoker/models/Combo.elm#L33)
+
+- No needed FFI to call from Elixir
+
+- [Simple](https://github.com/tim2CF/elchemy_poker/blob/6f975bfd0b6c3ca20a507ade19a83a9027ad7817/elm/elchemyPoker/Utils.elm#L7) FFI for Elixir calls from Elchemy
+
+- Auto generated Elixir [specs](https://github.com/tim2CF/elchemy_poker/blob/6f975bfd0b6c3ca20a507ade19a83a9027ad7817/lib/elchemy_poker/Utils.elchemy.ex#L43) (for Dialyzer and kind of documentation)
+
+]
+
+---
+
+.left-column[
+### BEAM langs
+### Elchemy
+### Experiment
+### Advantages
+### Disadvantages
+]
+
+.right-column[
+
+- Meta programming is not supported
+
+- No OTP / Phoenix / Ecto enterprise goodies (yet?)
+
+- Maintained by only one [person](https://github.com/wende/elchemy/issues)
+
+- Haskell-like currying in [generated code](https://wende.github.io/elchemy-ivy/calling-elchemy.html)
+
+- In some cases performance is slower up to 15%
+
+- FFI calls are not 100% safe (up to developer)
+
+]
+
+---
+
+.left-column[
+### BEAM langs
+### Elchemy
+### Experiment
+### Advantages
+### Disadvantages
+### Results
+]
+
+.right-column[
+
+- Elchemy compiler is pretty raw
+
+- Concept was not completed because of compiler issues
+  - [type aliases](https://github.com/wende/elchemy/issues/245)
+  - [source code naming policy](https://github.com/wende/elchemy/issues/246)
+  - [Elm case to Elixir function clause](https://github.com/wende/elchemy/issues/247)
+  - [type aliases representation in Elixir](https://github.com/wende/elchemy/issues/251)
+  - [excess of currying in generated Elixir source code](https://github.com/wende/elchemy/issues/218)
+
+- Christopher is very responsive guy, he fixed almost all issues and released new 0.5.4 version of Elchemy compiler **in 1 day**!
+
+- Christopher needs your (as user and developer) help to improve compiler
+
+- Elchemy compiler still looks very perspective
+
+- It's good opportunity for Elixir developers to learn Elm
+
+- Maybe it's nice to have a look to other static-typed BEAM language [Alpaca](https://github.com/alpaca-lang)
+
+]
+
+---
+
+class: center, middle
+
+# Thanks
+
+    </textarea>
+    <script src="js/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
